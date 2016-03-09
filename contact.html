@@ -1,0 +1,244 @@
+<head>
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/JavaScript">
+
+</script>
+<style>
+.header {
+}
+.headersize {
+margin:0 auto;
+padding:0;
+width:960px;
+ background: #efefef;
+color: #3d3630;
+}
+.logo {
+   width:auto;
+   padding:0;
+float:left;
+height:150px;
+}
+h1 {
+margin:0;
+padding:78px 0 0 20px;
+font-size:40px;
+font-weight:normal;
+line-height:1.2em;
+text-transform:uppercase;
+}
+h1 a, h1 a:hover {
+color:#eb8f2d;
+text-decoration:none;
+}
+h1 span {
+}
+h1 small {
+display:block;
+font-size:14px;
+line-height:1.2em;
+letter-spacing:normal;
+text-transform:uppercase;
+color:#1D1D1D;
+}
+
+.menu {
+margin:0 auto;
+padding:70px 0 0;
+float:right;
+height:67px;
+}
+.menu ul {
+list-style:none;
+padding:0;
+height:67px;
+float:left;
+}
+.menu ul li {
+margin:0;
+padding:0;
+float:left;
+background: #efefef;
+color: #949085;
+}
+	
+.menu ul li a {
+display:block;
+margin:0;
+padding:24px 28px 24px 16px;
+font-size:15px;
+line-height:19px;
+font-weight:normal;
+color:#1D1D1D;
+text-transform:uppercase;
+}
+.menu ul li.active a, .menu ul li a:hover {
+text-decoration:none;
+color:#eb8f2d;
+}
+</style>
+</head>
+<body bgColor="#efefef">
+<script type="text/JavaScript">
+function black()
+{
+document.bgColor="#3d3630";
+}
+function pink()
+{
+document.bgColor="pink";
+}
+function orange()
+{
+document.bgColor="#eb8f2d";
+}
+function gray()
+{
+document.bgColor="#efefef";
+}
+
+</script>
+	
+<div class="header">
+<div class="headersize">
+ <div class="logo">
+  <h1><a href="index.html"><span>SHRI.MPS</span> <small>join mp think big</small></a></h1>
+  </div>
+  <div class="menu">
+ <ul>
+ <li ><a href="home.html"><span>Home Page</span></a></li>
+<li ><a href="admission.html"> <span>admission</span></a></li>
+  <li><a href="about.html"><span>About Us</span></a></li>
+  <li><a href="gallery.html"><span>gallery</span></a></li>
+  <li class="active"><a href="contact.html"><span>Contact Us</span></a></li>
+  </ul>
+      </div>
+<img id="myImage" onclick="changeImage()" src="hs.jpg" width="960" height="360">
+<hr>
+<marquee><h3><a href="#">Welcome to SHRI. MANDARAPUSHPA KANNADA & ENGLISH SCHOOL</a></h3></marquee>		
+<hr>
+<!-- end header -->
+<div id="page">
+<div id="content">
+<div class="post">
+<h2 class="title"><a href="#">Welcome to SHRI. MANDARAPUSHPA KANNADA & ENGLISH SCHOOL</a></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+<h2 class="title"><a href="#"><strong>contact us</strong></a></h2>						
+<p>    </p>
+<p>  .</p>
+<h3>Send us mail</h3>
+<fieldset><legend> fill deatils</legend>
+<form action="contact.php" method="" id="sendemail">
+            <table>
+              <tr><td>
+                <label for="name">Name: </label></td>
+             <td>   <input id="name" name="name" class="text" />
+              </td></tr>
+<tr><td>
+                <label for="email">phone: </label>
+               <td> <input id="ph" name="phone" class="text" />
+               </td></tr>
+              <tr><td>
+                <label for="email">Email Address: </label>
+               <td> <input id="email" name="email" class="text" />
+               </td></tr>
+              <tr><td>
+                <label for="website">Website:</label></td>
+              <td>  <input id="website" name="web" class="text" />
+               </td></tr>
+              <tr><td>
+                <label for="message">Your Message:</label></td>
+               <td> <textarea id="message" name="message" rows="8" cols="50"></textarea>
+               </td></tr>
+              <tr><td></td>
+               <td> <input type="submit" name="submit" id="imageField"   /> </td></tr></table>
+</form>
+</fieldset>
+</div>
+</div>
+<div class="post">
+<h2 class="title"><a href="#"><strong>Contact Us</strong></a></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+
+ </p>
+ <p > <strong>Address: </strong></p>
+<p>Mandara pushpa  kannada & English school,<br> Biside Ramteerth temple near checkpost,<br> aland road Gulbarga -585101</p>
+
+         <strong> <p>phone:812788254</p></strong>
+       <strong>   <p>E-mail:<a href="#">mandarapushpa@gmail.com</a> </p></strong>
+</div>
+</div>
+
+       
+<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end content -->
+<div id="sidebar">
+<ul>
+<li>
+<div id="button" >
+<div>
+<form>
+<input type="button" value="black" onclick=black()>
+<input type="button" value="pink" onclick=pink()>
+<input type="button" value="0range" onclick=orange()>
+<input type="button" value="gray" onclick=gray()>
+</form>
+</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</li>
+<li>
+<h2>Notice board</h2>
+<p><textarea  name="pa" col="20" rows="12" value=" notice" cols="20">  notice </textarea> .</p>
+</li>
+<li>
+<h2>notification</h2>
+<ul>
+<li><a href="#">Daily time table</a></li>
+<li><a href="#">Exam time table</a></li>
+<li><a href="#">Result</a></li>
+<li><a href="#">Rules and regulation</a></li>
+<li><a href="#"> List of Rank student</a></li>
+<li><a href="#"> Study & TC certificate</a></li>
+</ul>
+</li>
+<li>
+<h2>School details</h2>
+<ul>
+<li><a href="#">student information</a></li>
+<li><a href="#">Teacher information</a></li>
+<li><a href="#">RTE information</a></li>
+<li><a href="#"> class information</a></li>
+<li><a href="#">KDP informayion</a></li>
+</ul>
+</li>
+<li>
+<h2> Events </h2>
+<ul>
+<li><a href="#"> List of holidays</a></li>
+<li><a href="#"> School festivals</a></li>
+<li><a href="#">list of event</a></li>
+<li><a href="#">Social work</a></li>
+<li><a href="#">Media</a></li>
+<li><a href="#">student life</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- end sidebar -->
+<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<hr>
+<div id="footer">
+<p><center>Design by <a href="h.co">Mallikarjun Gunderao</a>.</center></p>
+</div><hr>
+</div>
+</div>
+<!-- end footer -->
+</body>
+</html>

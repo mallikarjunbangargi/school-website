@@ -1,0 +1,337 @@
+<head>
+<title>school</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/JavaScript">
+var rotate_delay = 5000; 
+current = 0;
+function next() {
+if (document.slideform.slide[current+1]) {
+document.images.show.src = document.slideform.slide[current+1].value;
+document.slideform.slide.selectedIndex = ++current;
+   }
+else first();
+}
+function previous() {
+if (current-1 >= 0) {
+document.images.show.src = document.slideform.slide[current-1].value;
+document.slideform.slide.selectedIndex = --current;
+   }
+else last();
+}
+function first() {
+current = 0;
+document.images.show.src = document.slideform.slide[0].value;
+document.slideform.slide.selectedIndex = 0;
+}
+function last() {
+current = document.slideform.slide.length-1;
+document.images.show.src = document.slideform.slide[current].value;
+document.slideform.slide.selectedIndex = current;
+}
+function ap(text) {
+document.slideform.slidebutton.value = (text == "Stop") ? "Start" : "Stop";
+rotate();
+}
+function change() {
+current = document.slideform.slide.selectedIndex;
+document.images.show.src = document.slideform.slide[current].value;
+}
+function rotate() {
+if (document.slideform.slidebutton.value == "Stop") {
+current = (current == document.slideform.slide.length-1) ? 0 : current+1;
+document.images.show.src = document.slideform.slide[current].value;
+document.slideform.slide.selectedIndex = current;
+window.setTimeout("rotate()", rotate_delay);
+   }
+}
+
+function setbackground()
+{
+window.settimeout('setbackground()',5000);
+var index=Math.round(Math.random()*9);
+var colorvalue="ffffff";
+default color-white(index=0)
+if (index==1)
+	colorvalue="ffccccc";
+if (index==2)
+	colorvalue="ccafff";
+if (index==3)
+	colorvalue="a6beff";
+if (index==4)
+	colorvalue="99ffff";
+if (index==5)
+	colorvalue="d5ccbb";
+if (index==6)
+	colorvalue="99ff99";
+if (index==7)
+	colorvalue="ffffff";
+if (index==8)
+	colorvalue="ffcc99";
+if (index==9)
+	colorvalue="ccccccc";
+document.getElementsByTagName("body")[0].style.backgroundColor="#"+colorvalue;
+}
+</script>
+<style>
+.header {}
+.headersize {
+margin:0 auto;
+padding:0;
+width:960px;
+background: #efefef;
+color: #3d3630;
+}
+.logo {
+   width:auto;
+   padding:0;
+float:left;
+height:150px;
+}
+h1 {
+margin:0;
+padding:78px 0 0 20px;
+font-size:40px;
+font-weight:normal;
+line-height:1.2em;
+text-transform:uppercase;
+}
+h1 a, h1 a:hover {
+color:#eb8f2d;
+text-decoration:none;
+}
+h1 span {
+}
+h1 small {
+display:block;
+font-size:14px;
+line-height:1.2em;
+letter-spacing:normal;
+text-transform:uppercase;
+color:#1D1D1D;
+}
+
+.menu {
+margin:0 auto;
+padding:70px 0 0;
+float:right;
+height:67px;
+}
+.menu ul {
+list-style:none;
+padding:0;
+height:67px;
+float:left;
+}
+.menu ul li {
+margin:0;
+padding:0;
+float:left;
+background: #efefef;
+color: #949085;
+}
+	
+.menu ul li a {
+display:block;
+margin:0;
+padding:24px 28px 24px 16px;
+font-size:15px;
+line-height:19px;
+font-weight:normal;
+color:#1D1D1D;
+text-decoration:none;
+text-transform:uppercase;
+}
+.menu ul li.active a, .menu ul li a:hover {
+text-decoration:none;
+color:#eb8f2d;
+}
+</style>
+</head>
+<body onload=setbackground()>
+<script type="text/JavaScript">
+function black()
+{
+document.bgColor="#3d3630";
+}
+function pink()
+{
+document.bgColor="pink";
+}
+function orange()
+{
+document.bgColor="#eb8f2d";
+}
+function gray()
+{
+document.bgColor="#efefef";
+}
+
+</script>
+	
+<div class="header">
+<div class="headersize">
+ <div class="logo">
+  <h1><a href="index.html"><span>SHRI.MPS</span> <small>Join MP   Think Big</small></a></h1>
+  </div>
+  <div class="menu">
+ <ul>
+ <li ><a href="home.html"><span>Home Page</span></a></li>
+<li ><a href="admission.html"> <span>admission</span></a></li>
+  <li class="active"><a href="about.html"><span>About Us</span></a></li>
+  <li><a href="gallery.html"><span>gallery</span></a></li>
+  <li><a href="contact.html"><span>Contact Us</span></a></li>
+  </ul>
+      </div>
+<!--
+-->
+<form name=slideform>
+<table cellspacing=1 cellpadding=4 bgcolor="#000000">
+<tr>
+<td align=center bgcolor="white">
+<b>Image Slideshow</b>
+</td>
+</tr>
+<tr>
+<td align=center bgcolor="white" width=200 height=150>
+<img src="a.jpg" name="show">
+</td>
+</tr>
+<tr>
+<td align=center bgcolor="#C0C0C0">
+<select name="slide" onChange="change();">
+<option value="b.jpg" selected>azx
+<option value="a.jpg">sss
+<option value="slide1.jpg">ssss
+<option value="a.jpg">mmmm
+<option value="b.jpg">nnn
+</select>
+</td>
+</tr>
+<tr>
+<td align=center bgcolor="#C0C0C0">
+<input type=button onClick="first();" value="|<<" title="Beginning">
+<input type=button onClick="previous();" value="<<" title="Previous">
+<input type=button name="slidebutton" onClick="ap(this.value);" value="Start" title="AutoPlay">
+<input type=button onClick="next();" value=">>" title="Next">
+<input type=button onClick="last();" value=">>|" title="End">
+</td>
+</tr>
+</table>
+</form>
+<hr>
+<marquee><h3>WELCOME TO SHRI. MANDARAPUSHPA KANNADA & ENGLISH SCHOOL</h3></marquee>		
+<hr>
+<!-- end header -->
+<div id="page">
+<div id="content">
+<div class="post">
+<h2 class="title"><strong>  SHRI. MANDARAPUSHPA KANNADA & ENGLISH SCHOOL</strong></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+<h2 class="title"><strong>About us</strong></h2>						
+<p>  Mandara pushpa school started in 2005 under the aegis of Satlingappa Metre, the school is located 300 mtr  From Kalaburgi aland road Check post, surrounded by very peaceful RAMTEERTH TEMPLE. 
+The school caters to the students from nearby area & all over the Kalaburgi City.
+Students who come from the background of illiterate & comprise of farm laborer quarry workers.
+Majority of the students are first generation learners.</p>
+<p>Kannada is a Medium of instruction. Students are also exposed to computers & English at a very Early Age. A National language Hindi is taught from class 5th std onwards.</p>
+<p>The school lays Emphasis on a set of “Core values” which are inculcated & fostered in a supportive Environment that respect the individual & the diversities they bring in.  The school provides inputs to students to focus on their physical, Emotional, Cultural & Moral Development apart from their studies.</p>
+<p>A great person Swami Vivekananda’s Dream of Education through “Man making & Character Building” 
+Where Assimilation of ideas is important & actualizing the potentials of every child is attempted here in the school.
+The school aims to produce morally upright emotionally stable, self reliant, self confident & intelligent individuals of this land.
+ The school follows an enriched Curriculum for Mathematics & science (Abacus & Vedic) Drawing from international curricula.</p>
+.</p>
+</div>
+</div>
+<div class="post">
+<h2 class="title"><strong>Founder: Shri. Bhimashankar Niloor president  </strong></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+</div>
+</div><div class="post">
+<h2 class="title"><strong>Managing Director : Mr. Ravikumar niloor </strong></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+</div>
+</div>
+<div class="post">
+<h2 class="title"><strong>Members </strong></h2>
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+
+	<p>Shri. Bhimashankar Niloor:<br><p> president & Founder, profession- real estate business, m-9341756968<p/>
+	<p> Mr. ravikumar niloor:<br></p> secretary & member, BCA & MCA qualified m-9036162700 </p>
+	<p>Mr. lohitkumar niloor : qualified- MBA & pursuing CA M-8762979872
+	<p>Mr.Rajkumar niloor : member, qualified B.E, M-9739722667</p>
+	<p>Principle Shohbha M.A, M.PHIL, pursuing P.H.D, m-9448500830</p>
+ 
+</div>
+</div><div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end content -->
+<div id="sidebar">
+<ul>
+<li>
+<div id="button" >
+<div>
+<form>
+<input type="button" value="click here to change background" ><br>
+<input type="button" value="black" onclick=black()>
+<input type="button" value="pink" onclick=pink()>
+<input type="button" value="0range" onclick=orange()>
+<input type="button" value="gray" onclick=gray()>
+</form>
+</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</li>
+<li>
+<h2>Notice board</h2>
+<p><textarea  name="pa" col="20" rows="12" value=" notice" cols="20">  notice </textarea> .</p>
+</li>
+<li>
+<h2>notification</h2>
+<ul>
+<li><a href="#">Daily Time Table</a></li>
+<li><a href="#">Exam Time Table</a></li>
+<li><a href="#">Result</a></li>
+<li><a href="#">Rules and Regulation</a></li>
+<li><a href="#">Rank Student List</a></li>
+<li><a href="#"> Study & TC Certificateertificate</a></li>
+</ul>
+</li>
+<li>
+<h2>School details</h2>
+<ul>
+<li><a href="#">Student Information</a></li>
+<li><a href="#">Teacher Information</a></li>
+<li><a href="#">RTE Information</a></li>
+<li><a href="#">Class Information</a></li>
+<li><a href="#">KDP Information</a></li>
+</ul>
+</li>
+<li>
+<h2> Events </h2>
+<ul>
+<li><a href="#"> List of Holidays</a></li>
+<li><a href="#"> School Festivals</a></li>
+<li><a href="#">Social Work</a></li>
+<li><a href="#">Media</a></li>
+<li><a href="#">Student life</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- end sidebar -->
+<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<hr>
+<div id="footer">
+<p><center>Design by <a href="www.mallikarjunbangargi.yolasite.com">Mallikarjun Gunderao(PESIT)</a>.</center></p>
+</div><hr>
+</div>
+</div>
+<!-- end footer -->
+</body>
+</html>
